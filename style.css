@@ -1,0 +1,21 @@
+
+
+#header: {
+	-fx-background-fill: #f4f4f4;
+}
+
+#section-header:hover {
+    -fx-background-color: #ffffff;
+	-fx-underline: true;
+	-fx-text-fill: #9932CC;
+}
+
+#logo-header {
+	-fx-font-size: 32px;
+}
+
+#section-header {
+    -fx-font-size: 20pt;
+    -fx-font-family: futura-pt;
+    -fx-text-fill: #0000ff; 
+}
