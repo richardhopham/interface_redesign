@@ -1,7 +1,11 @@
-
+.label:hover {
+	-fx-background-color: #ffffff;
+	-fx-underline: true;
+	-fx-text-fill: #9932CC;
+}
 
 #header: {
-	-fx-background-fill: #f4f4f4;
+	-fx-background-fill: #ffffff;
 }
 
 #section-header:hover {
@@ -11,7 +15,7 @@
 }
 
 #logo-header {
-	-fx-font-size: 32px;
+	-fx-font-size: 32pt;
 }
 
 #section-header {
