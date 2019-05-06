@@ -21,7 +21,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.shape.Rectangle;
 
-public class GroupContributions extends Application{
+public class CraigsListRevamp extends Application{
 
 	public static void main(String[] args) {
 		
@@ -260,4 +260,4 @@ public class GroupContributions extends Application{
 		
 	}//end start
 	
-}//end GroupContributions
+}//end CraigsListRevamp
