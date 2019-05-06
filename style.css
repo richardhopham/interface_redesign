@@ -4,6 +4,14 @@
 	-fx-text-fill: #9932CC;
 }
 
+#location-combo-box {
+	-fx-background-color: #ffffff;
+}
+
+#location-combo-box:hover {
+	-fx-border-color: gray;
+}
+
 #header {
 	-fx-background-fill: #ffffff;
 }
@@ -19,9 +27,25 @@
 }
 
 #section-header {
-    -fx-font-size: 20pt;
+    -fx-font-size: 16pt;
     -fx-font-family: futura-pt;
     -fx-text-fill: #0000ff;
+}
+
+.tilted-pane {
+	-fx-background-color: #ffffff, #ffffff, #ffffff;
+}
+
+#footer-section-label {
+    -fx-font-size: 14pt;
+    -fx-font-weight: Bold;
+    -fx-underline: false;
+    -fx-text-fill: #000000;
+    -fx-background-color: #F5F5F5;
+}
+
+#footer-link {
+    -fx-font-size: 10pt;
 }
 
 #post {
