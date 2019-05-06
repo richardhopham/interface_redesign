@@ -1,0 +1,156 @@
+import javafx.application.Application;
+import javafx.stage.Stage;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.scene.layout.HBox;
+import javafx.geometry.Insets;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.BorderStroke;
+import javafx.scene.layout.BorderStrokeStyle;
+import javafx.scene.layout.BorderWidths;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TitledPane;
+
+public class CraigListRevamp extends Application {
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+	
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		// TODO Auto-generated method stub
+		
+		primaryStage.setFullScreen(true);
+		
+		Label logoLabel = new Label("CraigsList");
+		logoLabel.setId("logo-header");
+		
+		TextField searchField = new TextField();
+		searchField.setPrefWidth(500);
+		searchField.setPromptText("Search CraigsList");
+		
+		HBox topHeaderBox = new HBox(logoLabel, searchField);
+		topHeaderBox.setSpacing(200);
+                
+		TitledPane pane1 = new TitledPane();
+                pane1.setText("community");
+                pane1.setId("section-header");
+                pane1.setExpanded(false);
+                
+                VBox box1 = new VBox();
+                box1.getChildren().add(new Label("activities"));
+                box1.getChildren().add(new Label("events"));
+                box1.getChildren().add(new Label("volunteers"));
+                box1.getChildren().add(new Label("groups"));
+                box1.getChildren().add(new Label("local news"));
+                box1.getChildren().add(new Label("lost+found"));
+                box1.getChildren().add(new Label("missed connections"));
+                box1.getChildren().add(new Label("rideshare"));
+                box1.getChildren().add(new Label("general"));
+                pane1.setContent(box1);
+		
+                TitledPane pane2 = new TitledPane();
+                pane2.setText("services");
+                pane2.setExpanded(false);
+                VBox box2 = new VBox();
+                box2.getChildren().add(new Label("automotive"));
+                box2.getChildren().add(new Label("lifestyle"));
+                box2.getChildren().add(new Label("technology"));
+                box2.getChildren().add(new Label("financial"));
+                box2.getChildren().add(new Label("education"));
+                box2.getChildren().add(new Label("general"));
+               
+                pane2.setContent(box2);
+		pane2.setId("section-header");
+		
+		TitledPane pane3 = new TitledPane();
+                pane3.setText("discussion forums");
+                pane3.setExpanded(false);                
+                VBox box3 = new VBox();
+                box3.getChildren().add(new Label("technology"));
+                box3.getChildren().add(new Label("religion"));
+                box3.getChildren().add(new Label("education"));
+                box3.getChildren().add(new Label("beauty"));
+                box3.getChildren().add(new Label("finance"));
+                box3.getChildren().add(new Label("lifestyle"));
+                box3.getChildren().add(new Label("relationship"));
+                box3.getChildren().add(new Label("general"));
+                pane3.setContent(box3);
+		pane3.setId("section-header");
+		
+		TitledPane pane4 = new TitledPane();
+                pane4.setText("housing");
+                pane4.setExpanded(false);
+                VBox box4 = new VBox();
+                box4.getChildren().add(new Label("apartments/housing"));                 
+                box4.getChildren().add(new Label("office/commercial"));
+                box4.getChildren().add(new Label("parking/storage"));   
+                box4.getChildren().add(new Label("sublease"));   
+                box4.getChildren().add(new Label("vacation"));   
+                pane4.setContent(box4);
+		pane4.setId("section-header");
+		
+		TitledPane pane5 = new TitledPane();
+                pane5.setText("for sale");
+                pane5.setExpanded(false);
+                VBox box5 = new VBox();
+                box5.getChildren().add(new Label("technology"));
+                box5.getChildren().add(new Label("appliances"));
+                box5.getChildren().add(new Label("automotive"));
+                box5.getChildren().add(new Label("outdoors"));
+                box5.getChildren().add(new Label("music"));
+                box5.getChildren().add(new Label("fashion"));
+                box5.getChildren().add(new Label("general"));
+		
+		pane5.setContent(box5);
+		pane5.setId("section-header");
+               
+                
+                TitledPane pane6 = new TitledPane();
+                pane6.setText("jobs");
+                pane6.setExpanded(false);
+                VBox box6 = new VBox();
+		box6.getChildren().add(new Label("technology"));
+                box6.getChildren().add(new Label("business/finance"));
+                box6.getChildren().add(new Label("medical"));
+                box6.getChildren().add(new Label("education"));
+                box6.getChildren().add(new Label("retail"));
+                box6.getChildren().add(new Label("legal"));
+                box6.getChildren().add(new Label("volunteer"));
+                box6.getChildren().add(new Label("general"));
+                
+                pane6.setContent(box6);
+		pane6.setId("section-header");
+                box6.setId("section-header");
+                
+                
+		HBox sectionBox = new HBox(pane1, pane2, pane3, pane4, pane5,pane6);
+		sectionBox.setSpacing(150);
+		
+		VBox headerBox = new VBox(topHeaderBox, sectionBox);
+		
+		headerBox.setPadding(new Insets(10));
+		headerBox.setBorder(new Border(new BorderStroke(Color.WHITE, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+		headerBox.setBackground(new Background(new BackgroundFill(Color.gray(0.9), CornerRadii.EMPTY, Insets.EMPTY)));
+		headerBox.setId("header");
+		
+		BorderPane site = new BorderPane();
+		site.setTop(headerBox);
+		
+		Scene scene = new Scene(site);
+		scene.getStylesheets().add("style.css");
+		primaryStage.setTitle("craigslist: los angeles");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+			
+		
+	}
+
+}
