@@ -4,7 +4,7 @@
 	-fx-text-fill: #9932CC;
 }
 
-#header: {
+#header {
 	-fx-background-fill: #ffffff;
 }
 
@@ -23,3 +23,17 @@
     -fx-font-family: futura-pt;
     -fx-text-fill: #0000ff; 
 }
+
+#footer-section-label {
+    -fx-font-size: 14pt;
+    -fx-font-weight: Bold;
+    -fx-underline: false;
+    -fx-text-fill: #000000;
+    -fx-background-color: #F5F5F5;
+}
+
+#footer-link {
+    -fx-font-size: 10pt;
+}
+
+
