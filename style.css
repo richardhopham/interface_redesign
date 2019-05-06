@@ -4,7 +4,15 @@
 	-fx-text-fill: #9932CC;
 }
 
-#header {
+#location-combo-box {
+	-fx-background-color: #ffffff;
+}
+
+#location-combo-box: hover{
+	-fx-border-color: gray;
+}
+
+#header: {
 	-fx-background-fill: #ffffff;
 }
 
@@ -19,9 +27,13 @@
 }
 
 #section-header {
-    -fx-font-size: 20pt;
+    -fx-font-size: 16pt;
     -fx-font-family: futura-pt;
     -fx-text-fill: #0000ff; 
+}
+
+.tilted-pane {
+	-fx-background-color: #ffffff, #ffffff, #ffffff;
 }
 
 #footer-section-label {
@@ -35,5 +47,4 @@
 #footer-link {
     -fx-font-size: 10pt;
 }
-
 

@@ -34,14 +34,19 @@ public class CraigsListRevamp extends Application {
 		
 		Label logoLabel = new Label("CraigsList");
 		logoLabel.setId("logo-header");
+		logoLabel.setPrefHeight(30);
+
 		
 		ComboBox<String> locationComboBox = new ComboBox<>();
 		locationComboBox.setPromptText("Location");
+		locationComboBox.setPrefHeight(30);
+		locationComboBox.setId("location-combo-box");
 		locationComboBox.getItems().addAll("Los Angeles", "San Luis Obsipo", "Santa Barbara", "Inland Empire");
 		
 		
 		TextField searchField = new TextField();
 		searchField.setPrefWidth(500);
+		searchField.setPrefHeight(30);
 		searchField.setPromptText("Search CraigsList");
 		
 		
@@ -142,7 +147,6 @@ public class CraigsListRevamp extends Application {
         
         
 		HBox sectionBox = new HBox(communityPane, servicesPane, discussionPane, housingPane, forSalePane,jobsPane);
-		sectionBox.setSpacing(150);
 
 		VBox headerBox = new VBox(topHeaderBox, sectionBox);		
 		headerBox.setPadding(new Insets(10,10,10,10));
@@ -150,61 +154,60 @@ public class CraigsListRevamp extends Application {
 		headerBox.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
 		headerBox.setId("header");
 		
-                
-        VBox aboutUsBox = new VBox();
-        aboutUsBox.getChildren().add(new Label("About Us"));
-            aboutUsBox.getChildren().get(0).setId("footer-section-label");
-        aboutUsBox.getChildren().add(new Label("cl jobs"));
-            aboutUsBox.getChildren().get(1).setId("footer-link");
-        aboutUsBox.getChildren().add(new Label("about craigslist"));
-            aboutUsBox.getChildren().get(2).setId("footer-link");
-        aboutUsBox.getChildren().add(new Label("faq"));
-            aboutUsBox.getChildren().get(3).setId("footer-link");
-        aboutUsBox.getChildren().add(new Label("craig connects"));
-            aboutUsBox.getChildren().get(4).setId("footer-link");
-        aboutUsBox.getChildren().add(new Label("craigslist open source"));
-            aboutUsBox.getChildren().get(5).setId("footer-link");
-        aboutUsBox.setPadding(new Insets(5, 50, 5, 50));
-        
-        VBox helpfulLinksBox = new VBox();
-        helpfulLinksBox.getChildren().add(new Label("Helpful Links"));
-            helpfulLinksBox.getChildren().get(0).setId("footer-section-label");
-        helpfulLinksBox.getChildren().add(new Label("terms of use"));
-            helpfulLinksBox.getChildren().get(1).setId("footer-link");
-        helpfulLinksBox.getChildren().add(new Label("privacy policy"));
-            helpfulLinksBox.getChildren().get(2).setId("footer-link");
-        helpfulLinksBox.getChildren().add(new Label("personal safety tips"));
-            helpfulLinksBox.getChildren().get(3).setId("footer-link");
-        helpfulLinksBox.getChildren().add(new Label("avoiding scams & fraud"));
-            helpfulLinksBox.getChildren().get(4).setId("footer-link");
-        helpfulLinksBox.getChildren().add(new Label("feedback"));
-            helpfulLinksBox.getChildren().get(5).setId("footer-link");
-        helpfulLinksBox.setPadding(new Insets(5, 50, 5, 50));
-        
-        VBox otherResourcesBox = new VBox();
-        otherResourcesBox.getChildren().add(new Label("Other Resources"));
-            otherResourcesBox.getChildren().get(0).setId("footer-section-label");
-        otherResourcesBox.getChildren().add(new Label("craigslist blog"));
-            otherResourcesBox.getChildren().get(1).setId("footer-link");
-        otherResourcesBox.getChildren().add(new Label("best-of-craigslist"));
-            otherResourcesBox.getChildren().get(2).setId("footer-link");
-        otherResourcesBox.getChildren().add(new Label("craigslist TV"));
-            otherResourcesBox.getChildren().get(3).setId("footer-link");
-        otherResourcesBox.getChildren().add(new Label("\"craigslist joe\""));
-            otherResourcesBox.getChildren().get(4).setId("footer-link");
-        otherResourcesBox.getChildren().add(new Label("system status"));
-            otherResourcesBox.getChildren().get(5).setId("footer-link");
-        otherResourcesBox.setPadding(new Insets(5, 50, 5, 50));
-        
-        HBox footerSections = new HBox(aboutUsBox, helpfulLinksBox, otherResourcesBox);
-        
-        footerSections.setPadding(new Insets(0, 300, 0, 300));
-        VBox footerRibbonBox = new VBox(footerSections, new Label("\u00A9 craigslist"));
-        footerRibbonBox.getChildren().get(1).setStyle("-fx-underline: false;-fx-text-fill: #000000;-fx-background-color: #F5F5F5;-fx-alignment: CENTER;");
-                
+		VBox aboutUsBox = new VBox();
+	    aboutUsBox.getChildren().add(new Label("About Us"));
+	    aboutUsBox.getChildren().get(0).setId("footer-section-label");
+	    aboutUsBox.getChildren().add(new Label("cl jobs"));
+	    aboutUsBox.getChildren().get(1).setId("footer-link");
+	    aboutUsBox.getChildren().add(new Label("about craigslist"));
+	    aboutUsBox.getChildren().get(2).setId("footer-link");
+	    aboutUsBox.getChildren().add(new Label("faq"));
+	    aboutUsBox.getChildren().get(3).setId("footer-link");
+	    aboutUsBox.getChildren().add(new Label("craig connects"));
+	    aboutUsBox.getChildren().get(4).setId("footer-link");
+	    aboutUsBox.getChildren().add(new Label("craigslist open source"));
+	    aboutUsBox.getChildren().get(5).setId("footer-link");
+	    aboutUsBox.setPadding(new Insets(5, 50, 5, 50));
+	        
+	    VBox helpfulLinksBox = new VBox();
+	    helpfulLinksBox.getChildren().add(new Label("Helpful Links"));
+	    helpfulLinksBox.getChildren().get(0).setId("footer-section-label");
+	    helpfulLinksBox.getChildren().add(new Label("terms of use"));
+	    helpfulLinksBox.getChildren().get(1).setId("footer-link");
+	    helpfulLinksBox.getChildren().add(new Label("privacy policy"));
+	    helpfulLinksBox.getChildren().get(2).setId("footer-link");
+	    helpfulLinksBox.getChildren().add(new Label("personal safety tips"));
+	    helpfulLinksBox.getChildren().get(3).setId("footer-link");
+	    helpfulLinksBox.getChildren().add(new Label("avoiding scams & fraud"));
+	    helpfulLinksBox.getChildren().get(4).setId("footer-link");
+	    helpfulLinksBox.getChildren().add(new Label("feedback"));
+	    helpfulLinksBox.getChildren().get(5).setId("footer-link");
+	    helpfulLinksBox.setPadding(new Insets(5, 50, 5, 50));
+	        
+	    VBox otherResourcesBox = new VBox();
+	    otherResourcesBox.getChildren().add(new Label("Other Resources"));
+	    otherResourcesBox.getChildren().get(0).setId("footer-section-label");
+	    otherResourcesBox.getChildren().add(new Label("craigslist blog"));
+	    otherResourcesBox.getChildren().get(1).setId("footer-link");
+	    otherResourcesBox.getChildren().add(new Label("best-of-craigslist"));
+	    otherResourcesBox.getChildren().get(2).setId("footer-link");
+	    otherResourcesBox.getChildren().add(new Label("craigslist TV"));
+	    otherResourcesBox.getChildren().get(3).setId("footer-link");
+	    otherResourcesBox.getChildren().add(new Label("\"craigslist joe\""));
+	    otherResourcesBox.getChildren().get(4).setId("footer-link");
+	    otherResourcesBox.getChildren().add(new Label("system status"));
+	    otherResourcesBox.getChildren().get(5).setId("footer-link");
+	    otherResourcesBox.setPadding(new Insets(5, 50, 5, 50));
+	        
+	    HBox footerSections = new HBox(aboutUsBox, helpfulLinksBox, otherResourcesBox);
+	        
+	    footerSections.setPadding(new Insets(0, 300, 0, 300));
+	    VBox footerRibbonBox = new VBox(footerSections, new Label("\u00A9 craigslist"));
+	    footerRibbonBox.getChildren().get(1).setStyle("-fx-underline: false;-fx-text-fill: #000000;-fx-background-color: #F5F5F5;-fx-alignment: CENTER;");
+		
 		BorderPane site = new BorderPane();
 		site.setTop(headerBox);
-                site.setBottom(footerRibbonBox);
+		site.setBottom(footerRibbonBox);
 		
 		Scene scene = new Scene(site);
 		scene.getStylesheets().add("style.css");
