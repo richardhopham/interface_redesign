@@ -46,9 +46,11 @@ public class CraigsListRevamp extends Application{
 		locationComboBox.getItems().addAll("Los Angeles", "San Luis Obsipo", "Santa Barbara", "Inland Empire");
 		
 		TextField searchField = new TextField();
-		searchField.setPrefWidth(500);
+		searchField.setPrefWidth(850);
 		searchField.setPrefHeight(30);
 		searchField.setPromptText("Search CraigsList");
+		
+		Label accountLabel = new Label("My Account |");
 
 		HBox topHeaderBox = new HBox(logoLabel, locationComboBox, searchField);
 		topHeaderBox.setSpacing(50);
@@ -56,12 +58,15 @@ public class CraigsListRevamp extends Application{
 		topHeaderBox.setId("top-header");
 		topHeaderBox.setBorder(new Border(new BorderStroke(Color.WHITE, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 		topHeaderBox.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
+		
+		
 
 		ComboBox<String> communityComboBox = new ComboBox<>();
 		communityComboBox.setPromptText("community");
 		communityComboBox.setId("section-header");
 		
 		communityComboBox.getItems().addAll("activities", "events", "volunteers", "groups", "local news", "lost+found", "missed connections", "rideshare", "general");
+		
 		
 		ComboBox<String> servicesComboBox = new ComboBox<>();
 		servicesComboBox.setPromptText("services");
@@ -95,9 +100,14 @@ public class CraigsListRevamp extends Application{
 		VBox headerBox = new VBox(topHeaderBox, sectionBox);
 		headerBox.setPadding(new Insets(10, 10, 10, 10));
 		headerBox.setId("header");
+		
+		
+		
+		
 
 		Label post1Label = new Label("1");
 		post1Label.setId("post-label");
+		post1Label.setPadding(new Insets(10));
 		
 		ImageView pic1 = new ImageView(new Image("file:HelpWanted.png"));
 		
@@ -114,11 +124,13 @@ public class CraigsListRevamp extends Application{
 		HBox post1 = new HBox(post1Label, pic1, post1Description);
 		post1.setAlignment(Pos.CENTER_LEFT);
 		post1.setSpacing(8);
+		post1.setId("post");
 		
 		ImageView pic2 = new ImageView(new Image("file:HelpWanted.png"));
 		
 		Label post2Label = new Label("2");
 		post2Label.setId("post-label");
+		post2Label.setPadding(new Insets(10));
 		
 		Label post2Title = new Label("New hiring manager wanted for CraigsList!   Set your own schedule!   Wages: $40-80/hr");
 		post2Title.setId("post");
@@ -133,11 +145,13 @@ public class CraigsListRevamp extends Application{
 		HBox post2 = new HBox(post2Label, pic2, post2Description);
 		post2.setAlignment(Pos.CENTER_LEFT);
 		post2.setSpacing(8);
+		post2.setId("post");
 		
 		ImageView pic3 = new ImageView(new Image("file:HelpWanted.png"));
 		
 		Label post3Label = new Label("3");
 		post3Label.setId("post-label");
+		post3Label.setPadding(new Insets(10));
 		
 		Label post3Title = new Label("New back-end programmer wanted for CraigsList!   Set your own schedule!   Wages: $2/hr");
 		post3Title.setId("post");
@@ -152,11 +166,13 @@ public class CraigsListRevamp extends Application{
 		HBox post3 = new HBox(post3Label, pic3, post3Description);
 		post3.setAlignment(Pos.CENTER_LEFT);
 		post3.setSpacing(8);
+		post3.setId("post");
 		
 		ImageView pic4 = new ImageView(new Image("file:HelpWanted.png"));
 		
 		Label post4Label = new Label("4");
 		post4Label.setId("post-label");
+		post4Label.setPadding(new Insets(10));
 		
 		Label post4Title = new Label("New financial advisor wanted for CraigsList!   Schedule: Mon-Fri   Wages: $100/hr");
 		post4Title.setId("post");
@@ -171,6 +187,28 @@ public class CraigsListRevamp extends Application{
 		HBox post4 = new HBox(post4Label, pic4, post4Description);
 		post4.setAlignment(Pos.CENTER_LEFT);
 		post4.setSpacing(8);
+		post4.setId("post");
+		
+		ImageView pic5 = new ImageView(new Image("file:HelpWanted.png"));
+		
+		Label post5Label = new Label("5");
+		post5Label.setId("post-label");
+		post5Label.setPadding(new Insets(10));
+		
+		Label post5Title = new Label("New financial advisor wanted for CraigsList!   Schedule: Mon-Fri   Wages: $100/hr");
+		post5Title.setId("post");
+		
+		Label post5Date = new Label("Posted: May 7");
+		post5Date.setId("post-date");
+		
+		Label post5Options = new Label("save");
+		post5Options.setId("post-options");
+		
+		VBox post5Description = new VBox(post5Title, post5Date, post5Options);
+		HBox post5 = new HBox(post5Label, pic5, post5Description);
+		post5.setAlignment(Pos.CENTER_LEFT);
+		post5.setSpacing(8);
+		post5.setId("post");
 		
 		Button next = new Button("Next Page >");
 		next.setId("select-page");
@@ -184,9 +222,8 @@ public class CraigsListRevamp extends Application{
 		HBox pageSelection = new HBox(previous, buttonSeparator, next);
 		pageSelection.setSpacing(20);
 		
-		VBox mainBody = new VBox(post1, post2, post3, post4, pageSelection);
-		mainBody.setPadding(new Insets(8));
-		mainBody.setSpacing(12);
+		VBox mainBody = new VBox(post1, post2, post3, post4, post5, pageSelection);
+		mainBody.setPadding(new Insets(20));
 		
 		VBox aboutUsBox = new VBox();
 		aboutUsBox.getChildren().add(new Label("About Us"));

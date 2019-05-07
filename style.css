@@ -12,6 +12,10 @@
 	-fx-border-color: gray;
 }
 
+#header {
+	-fx-background-color: #ffffff;
+}
+
 #top-header {
 	-fx-background-color: #ffffff;
 }
@@ -47,6 +51,7 @@
 #post {
 	-fx-font-size: 15pt;
 	-fx-text-fill: #0000ff;	
+	-fx-background-color: #ffffff;
 }
 
 #post:hover {
