@@ -18,7 +18,6 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TitledPane;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -35,7 +34,7 @@ public class CraigsListRevamp extends Application{
 		
 		primaryStage.setFullScreen(true);
 
-		Label logoLabel = new Label("CraigsList");
+		Label logoLabel = new Label("craigslist");
 		logoLabel.setId("logo-header");
 		logoLabel.setPrefHeight(30);
 
@@ -55,6 +54,7 @@ public class CraigsListRevamp extends Application{
 		topHeaderBox.setSpacing(50);
 		topHeaderBox.setAlignment(Pos.BASELINE_LEFT);
 		topHeaderBox.setId("top-header");
+		topHeaderBox.setPadding(new Insets(10));
 		topHeaderBox.setBorder(new Border(new BorderStroke(Color.WHITE, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 		topHeaderBox.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
 		
@@ -99,11 +99,12 @@ public class CraigsListRevamp extends Application{
 		
 		HBox accountBox = new HBox(accountLabel, postLabel);
 		accountBox.setAlignment(Pos.BASELINE_RIGHT);
+		accountBox.setId("account");
 		
 		HBox sectionBox = new HBox(communityComboBox, servicesComboBox, discussionComboBox, housingComboBox, forSaleComboBox,jobsComboBox);
 		
 		HBox bottomHeaderBox = new HBox(sectionBox, accountBox);
-		bottomHeaderBox.setSpacing(410);
+		bottomHeaderBox.setSpacing(300);
 
 		VBox headerBox = new VBox(topHeaderBox, bottomHeaderBox);
 		headerBox.setPadding(new Insets(10, 10, 10, 10));
