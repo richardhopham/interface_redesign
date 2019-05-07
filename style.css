@@ -54,6 +54,11 @@
 	-fx-background-color: #ffffff;
 }
 
+#entry {
+	-fx-background-color: #ffffff;
+}
+
+
 #post:hover {
 	-fx-underline: true;
 	-fx-text-fill: #9932CC;
