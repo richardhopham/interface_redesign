@@ -50,7 +50,6 @@ public class CraigsListRevamp extends Application{
 		searchField.setPrefHeight(30);
 		searchField.setPromptText("Search CraigsList");
 		
-		Label accountLabel = new Label("My Account |");
 
 		HBox topHeaderBox = new HBox(logoLabel, locationComboBox, searchField);
 		topHeaderBox.setSpacing(50);
@@ -95,9 +94,18 @@ public class CraigsListRevamp extends Application{
 		jobsComboBox.getItems().addAll("technology", "business/finance", "medical", "education", "retail", "legal", "volunteer", "general");
 		jobsComboBox.setId("section-header");
 
+		Label accountLabel = new Label("my account |");
+		Label postLabel = new Label(" create a posting");
+		
+		HBox accountBox = new HBox(accountLabel, postLabel);
+		accountBox.setAlignment(Pos.BASELINE_RIGHT);
+		
 		HBox sectionBox = new HBox(communityComboBox, servicesComboBox, discussionComboBox, housingComboBox, forSaleComboBox,jobsComboBox);
+		
+		HBox bottomHeaderBox = new HBox(sectionBox, accountBox);
+		bottomHeaderBox.setSpacing(410);
 
-		VBox headerBox = new VBox(topHeaderBox, sectionBox);
+		VBox headerBox = new VBox(topHeaderBox, bottomHeaderBox);
 		headerBox.setPadding(new Insets(10, 10, 10, 10));
 		headerBox.setId("header");
 		
@@ -369,6 +377,7 @@ public class CraigsListRevamp extends Application{
 		site.setTop(headerBox);
 		site.setCenter(mainBody);
 		site.setBottom(footerRibbonBox);
+		
 	    
 		Scene scene = new Scene(site);
 		scene.getStylesheets().add("style.css");
