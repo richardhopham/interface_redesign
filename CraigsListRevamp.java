@@ -20,6 +20,7 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -373,10 +374,13 @@ public class CraigsListRevamp extends Application{
 		VBox footerRibbonBox = new VBox(footerSections, new Label("\u00A9 craigslist"));
 		footerRibbonBox.getChildren().get(1).setStyle("-fx-underline: false;-fx-text-fill: #000000;-fx-background-color: #F5F5F5;-fx-alignment: CENTER;");
 		
+                VBox bodyBox = new VBox();
+                bodyBox.getChildren().addAll(mainBody, footerRibbonBox);
+                ScrollPane scrollPane = new ScrollPane(bodyBox);
+                
 		BorderPane site = new BorderPane();
 		site.setTop(headerBox);
-		site.setCenter(mainBody);
-		site.setBottom(footerRibbonBox);
+		site.setCenter(scrollPane);
 		
 	    
 		Scene scene = new Scene(site);
