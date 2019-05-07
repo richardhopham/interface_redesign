@@ -22,6 +22,11 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+/**
+ * Class to redo the homepage of CraigsList
+ * @author Richard Pham
+ *
+ */
 public class CraigsListRevamp extends Application{
 
 	public static void main(String[] args) {
@@ -34,22 +39,25 @@ public class CraigsListRevamp extends Application{
 		
 		primaryStage.setFullScreen(true);
 
+		//Logo 
 		Label logoLabel = new Label("craigslist");
 		logoLabel.setId("logo-header");
 		logoLabel.setPrefHeight(30);
 
+		//Location ComboBox
 		ComboBox<String> locationComboBox = new ComboBox<>();
 		locationComboBox.setPromptText("Location");
 		locationComboBox.setPrefHeight(30);
 		locationComboBox.setId("location-combo-box");
 		locationComboBox.getItems().addAll("Los Angeles", "San Luis Obsipo", "Santa Barbara", "Inland Empire");
 		
+		//Search bar
 		TextField searchField = new TextField();
 		searchField.setPrefWidth(850);
 		searchField.setPrefHeight(30);
 		searchField.setPromptText("Search CraigsList");
 		
-
+		//Top part of the header
 		HBox topHeaderBox = new HBox(logoLabel, locationComboBox, searchField);
 		topHeaderBox.setSpacing(50);
 		topHeaderBox.setAlignment(Pos.BASELINE_LEFT);
@@ -58,62 +66,63 @@ public class CraigsListRevamp extends Application{
 		topHeaderBox.setBorder(new Border(new BorderStroke(Color.WHITE, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 		topHeaderBox.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
 		
-		
-
+		//community ComboBox
 		ComboBox<String> communityComboBox = new ComboBox<>();
 		communityComboBox.setPromptText("community");
 		communityComboBox.setId("section-header");
-		
 		communityComboBox.getItems().addAll("activities", "events", "volunteers", "groups", "local news", "lost+found", "missed connections", "rideshare", "general");
 		
-		
+		//services ComboBox
 		ComboBox<String> servicesComboBox = new ComboBox<>();
 		servicesComboBox.setPromptText("services");
 		servicesComboBox.setId("section-header");	
 		servicesComboBox.getItems().addAll("automotive", "lifestyle", "technology", "financial", "education", "general");
 		
-		
+		//discussion ComboBox
 		ComboBox<String> discussionComboBox = new ComboBox<>();
-
 		discussionComboBox.setPromptText("discussion forums"); 
 		discussionComboBox.getItems().addAll("technology", "religion", "education", "beauty", "finance", "lifestyle", "relationship", "general");
 		discussionComboBox.setId("section-header");
 
+		//housing ComboBox
 		ComboBox<String> housingComboBox = new ComboBox<>();
 		housingComboBox.setPromptText("housing");
 		housingComboBox.getItems().addAll("apartments/housing", "office/commercial", "parking/storage", "sublease", "vacation");		
 		housingComboBox.setId("section-header");
 
+		//for sale ComboBox
 		ComboBox<String> forSaleComboBox = new ComboBox<>();
 		forSaleComboBox.setPromptText("for sale");
 		forSaleComboBox.getItems().addAll("technology", "appliances", "automotive", "outdoors", "music", "fashion", "general");
 		forSaleComboBox.setId("section-header");
 
+		//jobs ComboBox
 		ComboBox<String> jobsComboBox = new ComboBox<>();
 		jobsComboBox.setPromptText("jobs");
 		jobsComboBox.getItems().addAll("technology", "business/finance", "medical", "education", "retail", "legal", "volunteer", "general");
 		jobsComboBox.setId("section-header");
 
+		//account Label and box
 		Label accountLabel = new Label("my account |");
-		Label postLabel = new Label(" create a posting");
-		
+		Label postLabel = new Label(" create a posting");	
 		HBox accountBox = new HBox(accountLabel, postLabel);
 		accountBox.setAlignment(Pos.BASELINE_RIGHT);
 		accountBox.setId("account");
 		
+		//put sections into one HBox
 		HBox sectionBox = new HBox(communityComboBox, servicesComboBox, discussionComboBox, housingComboBox, forSaleComboBox,jobsComboBox);
 		
+		//put sections and account labels into HBox
 		HBox bottomHeaderBox = new HBox(sectionBox, accountBox);
 		bottomHeaderBox.setSpacing(300);
 
+		//put top and bottom of header into one VBox
 		VBox headerBox = new VBox(topHeaderBox, bottomHeaderBox);
 		headerBox.setPadding(new Insets(10, 10, 10, 10));
 		headerBox.setId("header");
 		
 		
-		
-		
-
+		//Post 1 
 		Label post1Label = new Label("1");
 		post1Label.setId("post-label");
 		post1Label.setPadding(new Insets(10));
@@ -135,6 +144,8 @@ public class CraigsListRevamp extends Application{
 		post1.setSpacing(8);
 		post1.setId("entry");
 		
+		
+		//Post 2
 		ImageView pic2 = new ImageView(new Image("file:HelpWanted.png"));
 		
 		Label post2Label = new Label("2");
@@ -156,6 +167,8 @@ public class CraigsListRevamp extends Application{
 		post2.setSpacing(8);
 		post2.setId("entry");
 		
+		
+		//Post 3
 		ImageView pic3 = new ImageView(new Image("file:HelpWanted.png"));
 		
 		Label post3Label = new Label("3");
@@ -177,6 +190,8 @@ public class CraigsListRevamp extends Application{
 		post3.setSpacing(8);
 		post3.setId("entry");
 		
+		
+		//Post 4
 		ImageView pic4 = new ImageView(new Image("file:HelpWanted.png"));
 		
 		Label post4Label = new Label("4");
@@ -198,6 +213,8 @@ public class CraigsListRevamp extends Application{
 		post4.setSpacing(8);
 		post4.setId("entry");
 		
+		
+		//Post 5
 		ImageView pic5 = new ImageView(new Image("file:HelpWanted.png"));
 		
 		Label post5Label = new Label("5");
@@ -220,7 +237,7 @@ public class CraigsListRevamp extends Application{
 		post5.setId("entry");
 		
 		
-		
+		//Post 6
 		ImageView pic6 = new ImageView(new Image("file:HelpWanted.png"));
 		
 		Label post6Label = new Label("6");
@@ -243,6 +260,7 @@ public class CraigsListRevamp extends Application{
 		post6.setId("entry");
 		
 		
+		//Post 7
 		ImageView pic7 = new ImageView(new Image("file:HelpWanted.png"));
 		
 		Label post7Label = new Label("7");
@@ -265,6 +283,7 @@ public class CraigsListRevamp extends Application{
 		post7.setId("entry");
 		
 		
+		//Post 8
 		ImageView pic8 = new ImageView(new Image("file:HelpWanted.png"));
 		
 		Label post8Label = new Label("8");
@@ -287,6 +306,7 @@ public class CraigsListRevamp extends Application{
 		post8.setId("entry");
 		
 		
+		//Post 9
 		ImageView pic9 = new ImageView(new Image("file:HelpWanted.png"));
 		
 		Label post9Label = new Label("9");
@@ -308,21 +328,27 @@ public class CraigsListRevamp extends Application{
 		post9.setSpacing(8);
 		post9.setId("entry");
 		
+		//Next button
 		Button next = new Button("Next Page >");
 		next.setId("select-page");
 		
+		//button Separator
 		Label buttonSeparator = new Label("|");
 		buttonSeparator.setId("post-label");
 		
+		//Prev button
 		Button previous = new Button("< Prev Page");
 		previous.setId("select-page");
 		
+		//put buttons into one Box
 		HBox pageSelection = new HBox(previous, buttonSeparator, next);
 		pageSelection.setSpacing(20);
 		
+		//put posts and buttons into one Box
 		VBox mainBody = new VBox(post1, post2, post3, post4, post5, post6, post7, post8, post9, pageSelection);
 		mainBody.setPadding(new Insets(20));
 		
+		//create sections for aboutUs section
 		VBox aboutUsBox = new VBox();
 		aboutUsBox.getChildren().add(new Label("About Us"));
 		aboutUsBox.getChildren().get(0).setId("footer-section-label");
@@ -338,6 +364,7 @@ public class CraigsListRevamp extends Application{
 		aboutUsBox.getChildren().get(5).setId("footer-link");
 		aboutUsBox.setPadding(new Insets(5, 50, 5, 50));
 
+		//create sections for helpfulLinks sections
 		VBox helpfulLinksBox = new VBox();
 		helpfulLinksBox.getChildren().add(new Label("Helpful Links"));
 		helpfulLinksBox.getChildren().get(0).setId("footer-section-label");
@@ -353,6 +380,8 @@ public class CraigsListRevamp extends Application{
 		helpfulLinksBox.getChildren().get(5).setId("footer-link");
 		helpfulLinksBox.setPadding(new Insets(5, 50, 5, 50));
 	    	
+		
+		//create sections for Other Sections sections
 		VBox otherResourcesBox = new VBox();
 		otherResourcesBox.getChildren().add(new Label("Other Resources"));
 		otherResourcesBox.getChildren().get(0).setId("footer-section-label");
@@ -367,19 +396,22 @@ public class CraigsListRevamp extends Application{
 		otherResourcesBox.getChildren().get(5).setId("footer-link");
 		otherResourcesBox.setPadding(new Insets(5, 50, 5, 50));
 	    	
+		
+		//put sections into the footer Box
 		HBox footerSections = new HBox(aboutUsBox, helpfulLinksBox, otherResourcesBox);
 		footerSections.setAlignment(Pos.CENTER);
-		
 		footerSections.setPadding(new Insets(0, 300, 0, 300));
 		VBox footerRibbonBox = new VBox(footerSections, new Label("\u00A9 craigslist"));
 		footerRibbonBox.getChildren().get(1).setStyle("-fx-underline: false;-fx-text-fill: #000000;-fx-background-color: #F5F5F5;-fx-alignment: CENTER;");
 		
+		
+		//put each section into site
 		BorderPane site = new BorderPane();
 		site.setTop(headerBox);
 		site.setCenter(mainBody);
 		site.setBottom(footerRibbonBox);
 		
-	    
+	    //scene
 		Scene scene = new Scene(site);
 		scene.getStylesheets().add("style.css");
 		primaryStage.setTitle("craigslist");
